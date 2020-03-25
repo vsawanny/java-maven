@@ -11,6 +11,9 @@ jobs:
     steps:
       
     - checkout
+    - run:
+          name: Maven Install
+          command: mvn dependency:go-offline install
     - run: mvn package
   sonarqube:
     docker:
