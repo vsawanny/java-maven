@@ -11,7 +11,7 @@ jobs:
     steps:
       
     - checkout
-    - run: mvm package
+    - run: mvn package
   sonarqube:
     docker:
       - image: circleci/node:8.10
