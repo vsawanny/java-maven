@@ -8,13 +8,7 @@ jobs:
     docker:
       - image: circleci/node:10.16.3
 
-    steps:
-      
-    - checkout
-    - run:
-          name: Maven Install
-          command: mvn dependency:go-offline install
-    - run: mvn package
+    
   sonarqube:
     docker:
       - image: circleci/node:8.10
@@ -29,6 +23,5 @@ workflows:
       - build:
          context: sonarcloud
       - sonarqube:
-          requires:
-            - build
+          
           context: sonarcloud
